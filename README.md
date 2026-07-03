@@ -6,7 +6,7 @@ This repository is an early-stage robot arm manipulation mini-lab for studying c
 
 ## Motivation
 
-The project extends the residual-learning idea from locomotion to manipulation. Instead of learning every behavior from scratch, it investigates whether classical robot control components can provide useful priors for learning-based arm reaching and obstacle avoidance.
+This project extends the residual-learning idea from locomotion to manipulation. Instead of learning every behavior from scratch, it investigates whether classical robot control components can provide useful priors for learning-based arm reaching and obstacle avoidance.
 
 ## Planned Pipeline
 
@@ -46,7 +46,7 @@ flowchart LR
 
 ```text
 mujoco-arm-manipulation-lab/
-├── configs/                  # YAML configuration skeletons for arms, control, trajectory, and reaching
+├── configs/                  # YAML configuration files for arms, control, trajectory, and reaching
 ├── common/                   # Shared kinematics, trajectory, control, metrics, and plotting utilities
 ├── 01_kinematics/            # FK, IK, Jacobian, workspace, and singularity demos
 ├── 02_trajectory/            # Trajectory generation and profile comparison demos
@@ -60,11 +60,9 @@ mujoco-arm-manipulation-lab/
 
 ## Current Status
 
-This repository currently defines the staged workflow for a robot arm manipulation mini-lab and includes initial scaffolding for kinematics, trajectory generation, control, MuJoCo reaching, obstacle avoidance, and residual RL. Some early utility scripts and smoke-test outputs are included, but benchmark-quality results will be added stage by stage.
+This repository currently defines the staged workflow for a robot arm manipulation mini-lab and includes initial scaffolding for kinematics, trajectory generation, control, MuJoCo reaching, obstacle avoidance, and residual RL. Some early utility scripts may be present, but benchmark-quality results will be added stage by stage.
 
 This project is intentionally staged. The goal is to build the manipulation stack incrementally rather than claiming a finished RL benchmark from the beginning.
-
-The current technical report is available at `reports/final_report.md`.
 
 ## Quick Start
 
@@ -73,8 +71,6 @@ The current technical report is available at `reports/final_report.md`.
 ```bash
 pip install -r requirements.txt
 ```
-
-MuJoCo, Gymnasium, and stable-baselines3 are needed only for later stages. If you only want to inspect the documentation and source layout, installing the full training stack is not required.
 
 ### Current Smoke Checks
 
@@ -85,6 +81,13 @@ python 01_kinematics/jacobian_demo.py
 python 01_kinematics/workspace_visualization.py
 python 02_trajectory/trajectory_generation_demo.py
 python 02_trajectory/compare_trajectory_profiles.py
+```
+
+### Planned Later
+
+These commands are planned for later stages and should not be interpreted as finished benchmark results yet:
+
+```bash
 python 03_control/joint_space_pd_demo.py
 python 03_control/task_space_control_demo.py
 python 03_control/jacobian_transpose_demo.py
@@ -93,37 +96,10 @@ python 04_mujoco_reaching/reaching_pd_demo.py
 python 04_mujoco_reaching/record_video.py
 python 05_obstacle_avoidance/potential_field_demo.py
 python 05_obstacle_avoidance/benchmark_obstacle_reaching.py
-python 05_obstacle_avoidance/record_obstacle_video.py
-python 06_residual_rl/evaluate_policies.py
-```
-
-These commands are intended as smoke checks for the current staged implementation. They are not a final benchmark protocol.
-
-### Planned Later
-
-The following scripts are present as early training/experiment entry points, but should be treated as planned benchmark work rather than polished results:
-
-```bash
 python 06_residual_rl/train_vanilla_ppo.py
 python 06_residual_rl/train_residual_ppo.py
-python 06_residual_rl/compare_ppo_results.py
-python 06_residual_rl/run_sample_efficiency.py
-python 06_residual_rl/record_policy_video.py
+python 06_residual_rl/evaluate_policies.py
 ```
-
-Future versions should turn these into a more rigorous multi-seed benchmark with broader target distributions and clearer experiment configuration.
-
-## Reports
-
-* `reports/project_plan.md`
-* `reports/results_index.md`
-* `reports/final_report.md`
-* `reports/stage_01_kinematics.md`
-* `reports/stage_02_trajectory.md`
-* `reports/stage_03_control.md`
-* `reports/stage_04_mujoco_reaching.md`
-* `reports/stage_05_obstacle_avoidance.md`
-* `reports/stage_06_residual_rl.md`
 
 ## Expected Outputs
 
@@ -135,12 +111,19 @@ Future versions should turn these into a more rigorous multi-seed benchmark with
 * residual RL comparison tables
 * final technical report
 
+## Reports
+
+* [Project Plan](reports/project_plan.md)
+* [Results Index](reports/results_index.md)
+* [Roadmap](ROADMAP.md)
+* [TODO](TODO.md)
+* [Final Report](reports/final_report.md)
+
 ## Future Work
 
-1. Extend the planar arm model from 2-link to 3-link kinematics.
-2. Broaden reaching targets and obstacle configurations.
-3. Improve benchmark scripts so they separate smoke tests from formal experiments.
-4. Run longer multi-seed PPO experiments with logged learning curves.
-5. Compare controller prior, vanilla PPO, and residual PPO across varied targets.
-6. Add MuJoCo obstacle geometry and evaluate obstacle avoidance in simulation.
-7. Polish the final portfolio report and README figures after the benchmark protocol is stable.
+1. Complete and validate the kinematics and trajectory smoke demos.
+2. Implement and benchmark joint-space and task-space controllers.
+3. Build a MuJoCo reaching environment with reliable video recording.
+4. Add obstacle avoidance with collision and path-quality metrics.
+5. Compare vanilla PPO with controller-prior residual PPO.
+6. Add benchmark tables, plots, demo videos, and a final technical report.
