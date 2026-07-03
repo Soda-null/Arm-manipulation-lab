@@ -1,0 +1,4 @@
+task:
+  target: [1.0, 0.5]
+  success_threshold: 0.05
+  max_steps: 500

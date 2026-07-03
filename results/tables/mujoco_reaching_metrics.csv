@@ -1,0 +1,2 @@
+method,target_x,target_y,final_error,steps,dt
+joint_pd_ik_target,1.000000,0.500000,0.000023,2000,0.002000

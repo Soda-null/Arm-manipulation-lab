@@ -1,0 +1,5 @@
+method,path_length,smoothness,velocity_effort
+linear,1.000000,0.000000,0.010101
+cubic,1.000000,0.000012,0.012120
+quintic,1.000000,0.000018,0.014429
+minimum_jerk,1.000000,0.000018,0.014429

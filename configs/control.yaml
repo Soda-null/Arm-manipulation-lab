@@ -1,0 +1,6 @@
+joint_pd:
+  kp: 20.0
+  kd: 2.0
+task_space:
+  kp: 10.0
+  kd: 1.0

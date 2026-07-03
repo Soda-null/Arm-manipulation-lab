@@ -1,0 +1,8 @@
+trajectory:
+  num_steps: 100
+  default_method: quintic
+  supported_methods:
+    - linear
+    - cubic
+    - quintic
+    - minimum_jerk

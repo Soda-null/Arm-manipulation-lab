@@ -1,0 +1,6 @@
+arm:
+  name: planar_3link
+  link_lengths: [1.0, 0.7, 0.5]
+  joint_limits:
+    lower: [-3.14159, -3.14159, -3.14159]
+    upper: [3.14159, 3.14159, 3.14159]

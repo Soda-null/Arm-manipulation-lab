@@ -1,0 +1,7 @@
+numpy
+matplotlib
+pyyaml
+mujoco==3.2.7
+imageio[ffmpeg]
+gymnasium
+stable-baselines3

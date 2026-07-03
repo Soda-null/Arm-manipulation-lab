@@ -1,0 +1,2 @@
+method,total_timesteps,success_rate,final_error,steps,return,control_effort
+vanilla_ppo,4096,0.0,2.5406477362423954,500.0,-777.7346742252065,4846.776400058029

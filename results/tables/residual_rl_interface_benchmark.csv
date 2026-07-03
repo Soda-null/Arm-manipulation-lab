@@ -1,0 +1,4 @@
+method,success,steps,final_error,return,control_effort
+vanilla_zero_torque,0,500,0.860233,-430.116263,0.000000
+controller_prior_zero_residual,1,216,0.047597,-110.251160,1373.208108
+controller_prior_scripted_residual,1,186,0.043210,-92.853035,1311.684771
